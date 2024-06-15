@@ -1,6 +1,7 @@
 package com.wellsfargo.counselor.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -56,3 +57,4 @@ public class Portfolio {
         this.totalValue = totalValue;
     }
 }
+

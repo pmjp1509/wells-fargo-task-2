@@ -1,18 +1,19 @@
 package com.wellsfargo.counselor.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-public class Securities {
+public class Security {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "portfolio_id")
-    private Portfolios portfolios;
+    private Portfolio portfolio;
 
     private String name;
     private String category;
@@ -21,17 +22,17 @@ public class Securities {
     private Integer quantity;
 
     // Constructor
-    public Securities(String name, String category, LocalDate purchaseDate, BigDecimal purchasePrice, Integer quantity, Portfolios portfolios) {
+    public Security(String name, String category, LocalDate purchaseDate, BigDecimal purchasePrice, Integer quantity, Portfolio portfolio) {
         this.name = name;
         this.category = category;
         this.purchaseDate = purchaseDate;
         this.purchasePrice = purchasePrice;
         this.quantity = quantity;
-        this.portfolios = portfolios;
+        this.portfolio = portfolio;
     }
 
     // Default constructor for JPA
-    public Securities() {}
+    public Security() {}
 
     // Getters and Setters
     public Long getId() {
@@ -78,11 +79,12 @@ public class Securities {
         this.quantity = quantity;
     }
 
-    public Portfolios getPortfolio() {
-        return portfolios ;
+    public Portfolio getPortfolio() {
+        return portfolio;
     }
 
-    public void setPortfolio(Portfolios portfolio) {
-        this.portfolios = portfolio;
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
     }
 }
+

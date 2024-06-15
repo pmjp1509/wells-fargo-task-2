@@ -1,6 +1,6 @@
 package com.wellsfargo.counselor.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -20,7 +20,7 @@ public class Client {
     private Set<Portfolio> portfolios;
 
     // Constructor
-    public Client(String name, String email, Financial_advisor advisor) {
+    public Client(String name, String email, FinancialAdvisor advisor) {
         this.name = name;
         this.email = email;
         this.advisor = advisor;
@@ -50,11 +50,11 @@ public class Client {
         this.email = email;
     }
 
-    public Financial_advisor getAdvisor() {
+    public FinancialAdvisor getAdvisor() {
         return advisor;
     }
 
-    public void setAdvisor(Financial_advisor advisor) {
+    public void setAdvisor(FinancialAdvisor advisor) {
         this.advisor = advisor;
     }
 
@@ -66,3 +66,4 @@ public class Client {
         this.portfolios = portfolios;
     }
 }
+

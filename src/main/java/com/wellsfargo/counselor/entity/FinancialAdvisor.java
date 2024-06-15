@@ -1,10 +1,10 @@
 package com.wellsfargo.counselor.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Financial_advisor {
+public class FinancialAdvisor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,13 +16,13 @@ public class Financial_advisor {
     private Set<Client> clients;
 
     // Constructor
-    public financial_advisor(String name, String email) {
+    public FinancialAdvisor(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
     // Default constructor for JPA
-    public financial_advisor() {}
+    public FinancialAdvisor() {}
 
     // Getters and Setters
     public Long getId() {
@@ -53,3 +53,4 @@ public class Financial_advisor {
         this.clients = clients;
     }
 }
+
